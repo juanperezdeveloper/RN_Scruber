@@ -77,16 +77,20 @@ const App = () => {
     return val * (Dimensions.get('window').width-90)/max - 15
   }
 
+  const calculateStepLeft = (val) => {
+    return val * (Dimensions.get('window').width-95)/max - 15
+  }
+
   const timeSteps = () => {
     return markers.map((marker, index) => {
-      let left = calculateLeft(timeCodeToTime(marker))
+      let left = calculateStepLeft(timeCodeToTime(marker))
         return (
           <View key={index} style={{position: 'absolute',
                         height: 20,
                         width: 20,
                         marginTop: 27,
                         left: left,
-                        marginLeft: 17,
+                        marginLeft: 20,
                         backgroundColor: '#fff',
                         borderColor: '#fe9829',
                         borderWidth: 2,
